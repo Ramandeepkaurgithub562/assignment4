@@ -1,0 +1,122 @@
+/* Reset default padding, margin, and box-sizing for all elements, and set the font-family */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Set background color and text color for the entire page */
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Style for all buttons: remove borders, set cursor, and define background color and text styling */
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #ff4081;
+  color: #ffffff;
+  border-radius: 0.5em;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Change button background color and add a slight lift effect on hover */
+button:hover {
+  background-color: #e91e63;
+  transform: translateY(-2px);
+}
+
+/* Container for search elements: grid layout, background color, border-radius, and shadow */
+.search-container {
+  display: grid;
+  grid-template-columns: 6fr 2fr 2fr;
+  gap: 1em;
+  width: 100%;
+  max-width: 50em;
+  margin: 2em auto;
+  padding: 0.5em;
+  background-color: #1f1f1f;
+  border-radius: 0.5em;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Style for input and select elements within the search container */
+.search-container input,
+.search-container select {
+  padding: 1em;
+  border-radius: 0.5em;
+  font-weight: 400;
+  border: none;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* Placeholder text color in the input field */
+.search-container input::placeholder {
+  color: #b0bec5;
+}
+
+/* Grid layout for the results wrapper */
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  padding: 1em;
+}
+
+/* Style for each result container: background color, padding, and transition effects */
+.container {
+  background-color: #212121;
+  display: flex;
+  padding: 1em;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0.5em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ensure images in result containers cover full width and apply transition effects */
+.container img {
+  width: 100%;
+  border-radius: 0.5em;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Apply a zoom and brightness effect on hover over images */
+.container img:hover {
+  transform: scale(1.08);
+  filter: brightness(1.2);
+}
+
+/* Style for button inside the result container */
+.container button {
+  margin-top: 1em;
+  padding: 1em 0;
+}
+
+/* Apply a slight lift and shadow effect on hover over the result container */
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive design adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container {
+    margin: 0.7em;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
